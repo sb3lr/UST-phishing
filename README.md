@@ -13,7 +13,7 @@ The following tools are required for the tool to function correctly:
 - `php`
 - `cloudflared`
 - `ngrok`
-- **WiFiPhisher** (must be installed manually)
+- `WiFiPhisher`
 
 If these tools are missing, they will be automatically downloaded when running the tool (except for WiFiPhisher, which needs to be installed manually).
 
@@ -85,7 +85,7 @@ This tool is intended for educational purposes only, and should not be used for 
 - `php`
 - `cloudflared`
 - `ngrok`
-- **WiFiPhisher** (يجب تثبيتها يدويًا)
+- `WiFiPhisher`
 
 إذا لم تكن هذه الأدوات مثبتة، فسيتم تنزيل الأدوات المفقودة تلقائيًا عند تشغيل الأداة (باستثناء WiFiPhisher، التي يجب تثبيتها يدويًا).
 
