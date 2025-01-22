@@ -13,26 +13,29 @@ The following tools are required for the tool to function correctly:
 - `php`
 - `cloudflared`
 - `ngrok`
+- **WiFiPhisher** (must be installed manually)
 
-If these tools are missing, they will be automatically downloaded when running the tool.
+If these tools are missing, they will be automatically downloaded when running the tool (except for WiFiPhisher, which needs to be installed manually).
 
 ## **Installation Instructions**
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/integrated-phishing-tool.git
-    cd integrated-phishing-tool
+    git clone https://github.com/sb3ly/UST-phishing.git
+    cd UST-phishing
     ```
 
-2. Ensure you are using an environment that supports these tools (e.g., Linux or WSL).
+2. Ensure you are using an environment that supports these tools Like Linux.
 
 3. The missing tools will be automatically downloaded (such as `cloudflared` and `ngrok`) if they are not installed.
+
+4. **WiFiPhisher** must be installed manually. Follow the installation instructions from the official [WiFiPhisher GitHub page](https://github.com/WiFiPhisher/WiFiPhisher).
 
 ## **How to Use**
 
 After installation, you can run the tool by executing the following command:
-```bash
-bash phishing-tool.sh
+```chmod +x phishing-tools.sh
+./phishing-tools.sh
 ```
 
 The main menu will appear where you can choose which tool to run:
@@ -54,7 +57,7 @@ The main menu will appear where you can choose which tool to run:
 
 ## **License**
 
-This tool was modified from the original tools available on GitHub, with added improvements to enhance the user experience. The tool can be downloaded and used under the [MIT License](https://opensource.org/licenses/MIT).
+This tool was modified from the original tools available on GitHub, with added improvements to enhance the user experience.
 
 ## **Disclaimers**
 
@@ -62,9 +65,9 @@ This tool is intended for educational purposes only, and should not be used for 
 
 ---
 
-**Modified by Saeed**
+**Modified by SB3LY**
 
-
+---
 
 ## ARABIC
 
@@ -82,26 +85,30 @@ This tool is intended for educational purposes only, and should not be used for 
 - `php`
 - `cloudflared`
 - `ngrok`
+- **WiFiPhisher** (يجب تثبيتها يدويًا)
 
-إذا لم تكن هذه الأدوات مثبتة، فسيتم تنزيل الأدوات المفقودة تلقائيًا عند تشغيل الأداة.
+إذا لم تكن هذه الأدوات مثبتة، فسيتم تنزيل الأدوات المفقودة تلقائيًا عند تشغيل الأداة (باستثناء WiFiPhisher، التي يجب تثبيتها يدويًا).
 
 ## **طريقة التثبيت**
 
 1. قم بتحميل الأداة عبر Git:
     ```bash
-    git clone https://github.com/yourusername/integrated-phishing-tool.git
-    cd integrated-phishing-tool
+    git clone https://github.com/sb3ly/UST-phishing.git
+    cd UST-phishing
     ```
 
-2. تأكد من أنك تستخدم بيئة تعمل على نظام تشغيل يدعم الأدوات (مثل لينكس أو WSL).
+2. تأكد من أنك تستخدم بيئة تعمل على نظام تشغيل يدعم الأدوات (مثل لينكس ).
 
 3. قم بتثبيت الأدوات اللازمة إذا كانت مفقودة. عند تشغيل الأداة، سيتم تحميل الأدوات المفقودة مثل `cloudflared` و `ngrok` بشكل تلقائي.
+
+4. يجب تثبيت **WiFiPhisher** يدويًا. اتبع تعليمات التثبيت من صفحة [WiFiPhisher GitHub الرسمية](https://github.com/WiFiPhisher/WiFiPhisher).
 
 ## **طريقة الاستخدام**
 
 بعد التثبيت، يمكنك تشغيل الأداة عبر تنفيذ الأمر التالي:
 ```bash
-bash phishing-tool.sh
+chmod +x phishing-tools.sh
+./phishing-tools.sh
 ```
 
 سيتم عرض القائمة الرئيسية حيث يمكنك اختيار الأداة التي تريد تشغيلها:
@@ -123,7 +130,7 @@ bash phishing-tool.sh
 
 ## **الترخيص**
 
-تم تعديل هذه الأداة من الأدوات الأصلية الموجودة على GitHub وتم إضافة بعض التعديلات لتحسين التفاعل وسهولة الاستخدام. يمكن تحميل واستخدام الأداة تحت رخصة [MIT](https://opensource.org/licenses/MIT).
+تم تعديل هذه الأداة من الأدوات الأصلية الموجودة على GitHub وتم إضافة بعض التعديلات لتحسين التفاعل وسهولة الاستخدام.
 
 ## **تنبيهات**
 
@@ -131,5 +138,4 @@ bash phishing-tool.sh
 
 ---
 
-**تم التعديل بواسطة سعيد (Saeed)**
-
+**تم التعديل بواسطة SB3LY**
