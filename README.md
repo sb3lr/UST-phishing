@@ -35,7 +35,7 @@ If these tools are missing, they will be automatically downloaded when running t
 
 After installation, you can run the tool by executing the following command:
 ```chmod +x phishing-tools.sh
-./phishing-tools.sh
+sudo ./phishing-tools.sh
 ```
 
 The main menu will appear where you can choose which tool to run:
@@ -108,7 +108,7 @@ This tool is intended for educational purposes only, and should not be used for 
 بعد التثبيت، يمكنك تشغيل الأداة عبر تنفيذ الأمر التالي:
 ```bash
 chmod +x phishing-tools.sh
-./phishing-tools.sh
+sudo ./phishing-tools.sh
 ```
 
 سيتم عرض القائمة الرئيسية حيث يمكنك اختيار الأداة التي تريد تشغيلها:
