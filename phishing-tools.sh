@@ -30,7 +30,7 @@ EOF
 
 # التحقق من المتطلبات
 check_dependencies() {
-    deps=("git" "php" "cloudflared" "ngrok")
+    deps=("git" "php" "cloudflared")
 
     for dep in "${deps[@]}"; do
         if ! command -v "$dep" &>/dev/null; then
@@ -41,15 +41,8 @@ check_dependencies() {
                     wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 -O cloudflared
                     chmod +x cloudflared && sudo mv cloudflared /usr/local/bin/
                     ;;
-                ngrok)
-                    echo -e "${GREEN}[*] تحميل Ngrok...${RESET}"
-                    wget -q https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-stable-linux-amd64.zip
-                    unzip ngrok-stable-linux-amd64.zip && chmod +x ngrok && sudo mv ngrok /usr/local/bin/
-                    ;;
-                *)
-                    echo -e "${RED}[!] الرجاء تثبيت $dep يدويًا.${RESET}"
-                    exit 1
-                    ;;
+
+
             esac
         fi
     done
@@ -62,19 +55,17 @@ run_tool() {
 
     case $1 in
         1)
-            echo -e "${CYAN}[+] تشغيل zphisher على البورت $port...${RESET}"
+            echo -e "${CYAN}[+] تشغيل zphisher على البورت ...${RESET}"
             cd zphisher || { echo -e "${RED}[!] المجلد غير موجود!${RESET}"; exit 1; }
-            bash zphisher.sh --port "$port"
+            bash zphisher.sh
             ;;
         2)
-            echo -e "${CYAN}[+] تشغيل camphish على البورت $port...${RESET}"
+            echo -e "${CYAN}[+] تشغيل camphish على البورت ...${RESET}"
             cd CamPhish || { echo -e "${RED}[!] المجلد غير موجود!${RESET}"; exit 1; }
-            bash camphish.sh --port "$port"
+            bash camphish.sh
             ;;
         3)
-            echo -e "${CYAN}[+] تشغيل wififishing على البورت $port...${RESET}"
-            cd wififishing || { echo -e "${RED}[!] المجلد غير موجود!${RESET}"; exit 1; }
-            bash wififishing.sh --port "$port"
+            sudo wifiphisher
             ;;
         4)
             echo -e "${CYAN}[+] تشغيل Cloudflare Tunnel على البورت $port...${RESET}"
@@ -112,3 +103,4 @@ main_menu() {
 
 # تشغيل القائمة
 main_menu
+# شد حيلك هاذي ادوات مالها فايدة اذا ماعرفت كيف تشتغل من الصفر ياوحش
