@@ -1,0 +1,3 @@
+wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 -O cloudflared
+chmod +x cloudflared
+sudo mv cloudflared /usr/local/bin/
