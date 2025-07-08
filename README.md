@@ -21,7 +21,7 @@ If these tools are missing, they will be automatically downloaded when running t
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/sb3ly/UST-phishing.git
+    git clone https://github.com/sb3lr/UST-phishing.git
     cd UST-phishing
     ```
 
@@ -65,7 +65,7 @@ This tool is intended for educational purposes only, and should not be used for 
 
 ---
 
-**Modified by SB3LY**
+**Modified by sb3lr**
 
 ---
 
@@ -93,7 +93,7 @@ This tool is intended for educational purposes only, and should not be used for 
 
 1. قم بتحميل الأداة عبر Git:
     ```bash
-    git clone https://github.com/sb3ly/UST-phishing.git
+    git clone https://github.com/sb3lr/UST-phishing.git
     cd UST-phishing
     ```
 
@@ -138,4 +138,4 @@ sudo ./phishing-tools.sh
 
 ---
 
-**تم التعديل بواسطة SB3LY**
+**تم التعديل بواسطة sb3lr**
